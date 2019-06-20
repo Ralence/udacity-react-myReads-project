@@ -1,13 +1,9 @@
 import React from 'react';
-
-const books = (props) => {
-    return (
-        <div className="bookshelf-books">
-            <ol className="books-grid">
-                {props.children}
-            </ol>
-        </div>
-    )
-}
+// wrapper component to wrap the Book.js components for styling the grig
+const books = props => (
+  <div className="bookshelf-books">
+    <ol className="books-grid">{props.children}</ol>
+  </div>
+);
 
 export default books;

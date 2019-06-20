@@ -1,38 +1,52 @@
 import React, { Component } from 'react';
-import Shelf from './Shelf';
 import { Link } from 'react-router-dom';
+import Shelf from './Shelf';
 
 class MyReads extends Component {
   render() {
+    // sort books from props to shelves based on book.shelf property
     const shelves = [
-      { shelf: 'Currently Reading', books: this.props.books.filter(book => book.currentShelf === 'Currently Reading') },
-      { shelf: 'Want to Read', books: this.props.books.filter(book => book.currentShelf === 'Want to Read') },
-      { shelf: 'Read', books: this.props.books.filter(book => book.currentShelf === 'Read') },
-    ]
+      {
+        shelf: 'Currently Reading',
+        books: this.props.books.filter(book => book.shelf === 'currentlyReading'),
+      },
+      {
+        shelf: 'Want to Read',
+        books: this.props.books.filter(book => book.shelf === 'wantToRead'),
+      },
+      {
+        shelf: 'Read',
+        books: this.props.books.filter(book => book.shelf === 'read'),
+      },
+    ];
     return (
-      <div className='list-books'>
+      <div className="list-books">
         <div className="list-books-title">
           <h1>MyReads</h1>
         </div>
-        <div className='list-books-content'>
+        <div className="list-books-content">
           <div>
-            {shelves.map(shelf => <Shelf
-              books={shelf.books}
-              handleBookActions={this.props.handleBookActions}
-              key={shelf.shelf}>
-              {shelf.shelf}
-            </Shelf>)}
+            {// map over shelves to render out the shelves and passes the shelf books as props
+            shelves.map(shelf => (
+              <Shelf
+                books={shelf.books}
+                setValueHandler={this.props.setValueHandler}
+                handleBookActions={this.props.handleBookActions}
+                key={shelf.shelf}
+              >
+                {shelf.shelf}
+              </Shelf>
+            ))}
           </div>
         </div>
-        <Link to='/search'>
+        <Link to="/search">
           <div className="open-search">
-            <button>Add a book</button>
+            <button type="button">Add a book</button>
           </div>
         </Link>
       </div>
     );
   }
-
 }
 
 export default MyReads;
