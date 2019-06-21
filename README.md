@@ -2,14 +2,20 @@
 
 ## Information
 
-* Project .........Memory Game
-* Purpose .........Udacity Front-End Nanodegree Program Project 2
+* Project .........MyReads
+* Purpose .........Udacity React Nanodegree Project
 * Creator .........Ranko Ostojic
-* Created .........January, 2019
+* Created .........June, 2019
+
+#### Short Description of the Project
 
 This is a project for Udacity's React Fundamentals course. The starter code was taken from this repo:
 
 https://github.com/udacity/reactnd-project-myreads-starter
+
+The starter code provides a static example of the CSS and HTML markup but without any of the React code that is needed to complete the project. Goal is to add interactivity to the app by refactoring the static code in this template.
+
+Finished project displays two pages. The First page shows a library with three book shelves, (Currently Reading, Want to Read, Read) with functionality of moving books from shelf to shelf, and deleting books. The Second page is the search page where users can search for new books and add them to their existing collection. The project is connected to a backend and all the changes made to the shelevs will persist after the page reloads.
 
 
 ## Installation
